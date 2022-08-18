@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: product-service
+
+server:
+  port: 8081
+  forward-headers-strategy: framework
+  
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
+    path: /product/v3/api-docs   
+  swagger-ui:
+    enabled: false
+
+    

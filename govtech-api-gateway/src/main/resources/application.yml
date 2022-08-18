@@ -1,0 +1,52 @@
+server:
+  port: 8080
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: govtech-api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+          - Path=/product-details/**, /product/**
+        - id: department-service
+          uri: lb://department-service
+          predicates:
+          - Path=/department/**
+       
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*" 
+  endpoint:
+    health:
+      probes:
+        enabled: true
+    gateway:
+      enabled: true            
+        
+logging:
+  level:
+    "[org.springframework.cloud.gateway]": INFO
+    
+springdoc:
+  swagger-ui:
+    url: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+    

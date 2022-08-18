@@ -1,0 +1,19 @@
+server:
+  port: 8088
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: department-service
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+springdoc:
+  api-docs:
+    enabled: true
+    path: /department/v3/api-docs
+  swagger-ui:
+    enabled: false     
