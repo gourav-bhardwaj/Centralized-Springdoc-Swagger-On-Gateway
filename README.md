@@ -53,4 +53,4 @@ server:
   forward-headers-strategy: framework
 ```
 
-> Note: If you forgot to specify this property then you will face CORS issue while calling APIs of all microservices.
+> Note: If you forgot to specify this property then you will face CORS issue while calling APIs of all microservices from swagger UI.
