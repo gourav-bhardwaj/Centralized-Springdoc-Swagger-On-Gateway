@@ -11,7 +11,7 @@ Spring cloud gateway use as a single entry point or interaction point for all co
   - org.springdoc:springdoc-openapi-webflux-ui
   - org.springdoc:springdoc-openapi-webflux-core
   - org.springframework.boot:spring-boot-devtools
-- Create other microservices with following microservices:
+- Create other microservices with following dependencies:
   - org.springframework.boot:spring-boot-starter-web
   - org.springframework.boot:spring-boot-starter-actuator
   - org.springframework.boot:spring-boot-devtools
